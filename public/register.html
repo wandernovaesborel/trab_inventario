@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <h1>Registro</h1>
+    <form id="register-form">
+        <label>Usuário:</label>
+        <input type="text" id="username" required>
+        <label>Senha:</label>
+        <input type="password" id="senha" required>
+        <input type="submit" value="Registrar">
+    </form>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="js/db.js"></script>
+    <script>
+        document.getElementById('register-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const senha = document.getElementById('senha').value;
+            firebase.auth().createUserWithEmailAndPassword(username, senha)
+                .then(() => {
+                    window.location.href = 'login.html';
+                })
+                .catch(error => {
+                    let errorMessage;
+                    switch (error.code) {
+                        case 'auth/email-already-in-use':
+                            errorMessage = 'O endereço de e-mail já está em uso.';
+                            break;
+                        case 'auth/invalid-email':
+                            errorMessage = 'O endereço de e-mail não é válido.';
+                            break;
+                        case 'auth/operation-not-allowed':
+                            errorMessage = 'Operação não permitida.';
+                            break;
+                        case 'auth/weak-password':
+                            errorMessage = 'A senha é muito fraca.';
+                            break;
+                        default:
+                            errorMessage = 'Erro ao registrar. Tente novamente mais tarde.';
+                    }
+                    alert(errorMessage);
+                    console.error('Erro ao registrar:', error);
+                });
+        });
+    </script>
+</body>
+</html>

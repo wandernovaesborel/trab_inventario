@@ -1,0 +1,146 @@
+body {
+    background-color: #ffffff;
+    color: #2E16FF;
+    font-family: 'Merienda', cursive;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: #A100FF;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h2 {
+    color: #A100FF;
+    font-size: 18px;
+    margin: 0; /* Remove margens padrão */
+    padding: 0; /* Remove preenchimento padrão, se necessário */
+}
+
+h3 {
+    font-family: 'Irish Grover', cursive;
+    color: #A100FF;
+    font-size: 36px;
+    margin: 0; /* Remove margens padrão */
+    padding: 0; /* Remove preenchimento padrão, se necessário */
+}
+
+h4 {
+    font-family: 'Irish Grover', cursive;
+    color: #A100FF;
+    font-size: 16px;
+}
+
+h5 {
+    font-family: 'Merienda';
+    font-size: 24px;
+    color: #2E16FF;
+    margin: 0; /* Remove margens padrão */
+    padding: 0; /* Remove preenchimento padrão, se necessário */
+}
+
+h6 {
+    font-family: 'Arial';
+    font-size: 18px;
+    color: #2E16FF;
+    margin: 0; /* Remove margens padrão */
+    padding: 0; /* Remove preenchimento padrão, se necessário */
+}
+
+
+input[type="text"],
+input[type="number"],
+input[type="password"] {
+    color: #2E16FF;
+    border-bottom: 2px solid #A100FF;
+}
+
+::placeholder {
+    color: #2E16FF;
+}
+
+/* Botões */
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Botões da página de login e dos modais*/
+
+button.outros {
+    background-color: #A100FF;
+    color: #FFFFFF;
+    cursor: pointer;
+    width: 40%;
+}
+
+/* Botão LogOut e Cadastrar apelido */
+
+#botaoLogout, #adicionar-form, #editar-form {
+    background-color: #D2A8FF;
+    color: #2E2E2E;
+    cursor: pointer;
+    width: 70px;
+}
+
+#botaoLogout:hover, #adicionar-form:hover, #editar-form:hover {
+    background-color: #A100FF;
+    color: #FFFFFF;
+}
+
+/* Botão + */
+
+#botaoAdicionarItem {
+    background-color: #D2A8FF;
+    color: #2E2E2E;
+    cursor: pointer;
+    width: 40px;
+    font-size: 24px;
+}
+
+#botaoAdicionarItem:hover {
+    background-color: #A100FF;
+    color: #FFFFFF;
+}
+
+/* Botões Editar / Excluir */
+
+a {
+    color: #2E16FF;
+    cursor: pointer;
+    width: 40px;
+}
+
+a:hover {
+    color: #A100FF;
+}
+
+/* Campos data e hora */
+.date-time-container {
+    display: flex;
+    gap: 10px;
+}
+
+.date-time-container input {
+    flex: 1;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    .form-container,
+    .event-container,
+    .modal-content {
+        width: 100%;
+        padding: 15px;
+    }
+}
